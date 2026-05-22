@@ -1,33 +1,19 @@
 <?php
 
-require_once __DIR__.'/../vendor/autoload.php';
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
 
-(new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
-    dirname(__DIR__)
-))->bootstrap();
-
-date_default_timezone_set(strval(env('APP_TIMEZONE', 'UTC')));
-
-$app = new Laravel\Lumen\Application(
-    dirname(__DIR__)
-);
-
-$app->withFacades();
-$app->withEloquent();
-
-$app->configure('app');
-
-$app->singleton(
-    Illuminate\Contracts\Console\Kernel::class,
-    Laravel\Lumen\Console\Kernel::class
-);
-$app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    Laravel\Lumen\Exceptions\Handler::class
-);
-
-$app->register(Jeoip\Server\AppServiceProvider::class);
-$app->register(Jeoip\Ip2Location\GeoIPServiceProvider::class);
-$app->middleware(Jeoip\Server\Http\Middleware\CorsMiddleware::class);
-
-return $app;
+return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+        web: __DIR__.'/../routes/web.php',
+        api: __DIR__.'/../routes/api.php',
+        // commands: __DIR__.'/../routes/console.php',
+        health: '/up',
+    )
+    ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->trustProxies(at: ['PRIVATE_SUBNETS']);
+    })
+    ->withExceptions(function (Exceptions $exceptions): void {
+        //
+    })->create();
