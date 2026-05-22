@@ -2,11 +2,6 @@
 
 namespace App\DTOs;
 
-use App\Contracts\ILocation;
-use Jeoip\Common\Exceptions\Exception;
-use Jeoip\Common\Location as CommonLocation;
-use Jeoip\Contracts\ICidr;
-
 readonly class Location
 {
     public bool $isEU;
@@ -26,6 +21,7 @@ readonly class Location
         public float $longitude,
         public string $zipcode,
         public string $timezone,
+        public ?string $hostname,
     ) {
         $this->isEU = in_array($countryCode, [
             'BE', 'EL', 'LT', 'PT', 'BG', 'ES', 'LU', 'RO', 'CZ', 'FR', 'HU', 'SI', 'DK', 'HR', 'MT', 'SK', 'DE', 'IT', 'NL', 'FI', 'EE', 'CY', 'AT', 'SE', 'IE', 'LV', 'PL',
@@ -51,6 +47,7 @@ readonly class Location
             'longitude' => $this->longitude,
             'zipcode' => $this->zipcode,
             'timezone' => $this->timezone,
+            'hostname' => $this->hostname,
         ];
 
         return $data;

@@ -10,7 +10,7 @@ class ApiControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
-    public function testQuery()
+    public function test_query()
     {
         SubnetV4::factory()->create();
         SubnetV6::factory()->create();
@@ -63,13 +63,13 @@ class ApiControllerTest extends TestCase
             ]);
     }
 
-    public function testIp()
+    public function test_ip()
     {
         $this->get(route('ip.ip'));
         $this->assertResponseStatus(200);
     }
 
-    public function testCountry()
+    public function test_country()
     {
         SubnetV4::factory()->create();
         SubnetV6::factory()->create();
@@ -82,7 +82,7 @@ class ApiControllerTest extends TestCase
         $this->assertResponseStatus(200);
     }
 
-    public function testCountryCode()
+    public function test_country_code()
     {
         SubnetV4::factory()->create();
         SubnetV6::factory()->create();
@@ -95,7 +95,7 @@ class ApiControllerTest extends TestCase
         $this->assertResponseStatus(200);
     }
 
-    public function testCity()
+    public function test_city()
     {
         SubnetV4::factory()->create();
         SubnetV6::factory()->create();
@@ -108,7 +108,7 @@ class ApiControllerTest extends TestCase
         $this->assertResponseStatus(200);
     }
 
-    public function testAsn()
+    public function test_asn()
     {
         SubnetV4::factory()->create();
         SubnetV6::factory()->create();

@@ -1,0 +1,39 @@
+// ----- IRANSans (Persian) self-hosted webfont -----
+$iransans: '../assets/fonts';
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 900;
+    src: url('#{$iransans}/IRANSansWeb(FaNum)_Black.woff2') format('woff2');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('#{$iransans}/IRANSansWeb(FaNum)_Bold.woff2') format('woff2');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('#{$iransans}/IRANSansWeb(FaNum)_Medium.woff2') format('woff2');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('#{$iransans}/IRANSansWeb(FaNum)_Light.woff2') format('woff2');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('#{$iransans}/IRANSansWeb(FaNum)_UltraLight.woff2') format('woff2');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('#{$iransans}/IRANSansWeb(FaNum).woff2') format('woff2');
+}

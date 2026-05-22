@@ -18,7 +18,7 @@ class LocationResource extends JsonResource
         return [
             'status' => true,
             'query' => $this->resource->ip,
-            
+
             ...$this->resource->jsonSerialize(),
         ];
     }

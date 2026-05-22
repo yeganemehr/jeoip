@@ -19,9 +19,9 @@ readonly class ApiController
         return new LocationResource($location);
     }
 
-    public function ip(Request $request): string
+    public function ip(Request $request, ?string $ip = null): string
     {
-        return $request->ip();
+        return $ip ?? $request->ip();
     }
 
     public function country(Request $request, ?string $ip = null): string

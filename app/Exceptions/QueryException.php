@@ -3,8 +3,8 @@
 namespace App\Exceptions;
 
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class QueryException extends Exception
 {
@@ -13,8 +13,7 @@ class QueryException extends Exception
         string $message,
         int $code = 404,
         ?\Throwable $previous = null
-    )
-    {
+    ) {
         parent::__construct($message, $code, $previous);
     }
 

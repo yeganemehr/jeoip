@@ -1,0 +1,40 @@
+// ----- brand -----
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+    }
+
+    img {
+        display: block;
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin: 0 0.25rem;
+    }
+
+    &__subtitle {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--text-regular-color);
+        margin-top: 0.25rem;
+    }
+}

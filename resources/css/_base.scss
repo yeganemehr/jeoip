@@ -1,0 +1,28 @@
+html,
+body {
+    max-width: 100vw;
+    overflow-x: auto;
+}
+
+body {
+    background-color: #FAFAFA;
+    font-family: 'Arial', 'Baskerville', 'Calibri', sans-serif;
+}
+
+html[dir='rtl'] body {
+    font-family: 'IRANSans', 'Arial', 'Baskerville', 'Calibri', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+// ----- page layout -----
+.layout-main {
+    display: flex;
+}

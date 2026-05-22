@@ -11,7 +11,7 @@ readonly class Cidr implements JsonSerializable
     {
         $parts = explode('/', $subnet);
         $count = count($parts);
-        if (1 == $count) {
+        if ($count == 1) {
             throw new Exception('Cannot find prefix');
         }
         if ($count > 2) {
@@ -26,8 +26,7 @@ readonly class Cidr implements JsonSerializable
     public function __construct(
         public string $network,
         public int $prefix
-    )
-    {}
+    ) {}
 
     public function __toString(): string
     {

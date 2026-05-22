@@ -5,13 +5,18 @@
     "type": "project",
     "require": {
         "php": "^8.4",
+        "blade-ui-kit/blade-icons": "^1.10",
         "dedoc/scramble": "^0.13.23",
         "ip2location/ip2location-php": "^9.8",
         "laravel/framework": "^13.0",
-        "laravel/octane": "^2.17"
+        "laravel/octane": "^2.17",
+        "laravel/tinker": "^3.0",
+        "postare/blade-mdi": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "laravel/boost": "^2.4",
+        "laravel/pint": "^1.29",
         "phpunit/phpunit": "^12.5.12"
     },
     "autoload": {
