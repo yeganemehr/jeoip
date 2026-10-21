@@ -8,7 +8,7 @@ COPY . /app/
 RUN npm run build
 
 
-FROM dunglas/frankenphp:1.12.2-php8.4-alpine
+FROM dunglas/frankenphp:1-php8.4-alpine
 
 RUN --mount=type=bind,source=.docker/fs,target=/mnt \
 	install-php-extensions bcmath zip && \
